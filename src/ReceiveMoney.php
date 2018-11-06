@@ -1,16 +1,23 @@
 <?php
 /**
- * @package Jenga For WooCommerce
+ * @package Osen Jenga
  * @author Osen Concepts < hi@osen.co.ke >
  * @version 1.10
  */
-namespace Osen;
+namespace Jenga;
 
 /**
  * 
  */
 class ReceiveMoney extends Jenga
 {
+
+	public static function request( $method, $data )
+	{
+		return self::$$method( $data );
+	}
+
+	
 	/**
 	 * @param customer object
 	 * @param customer.mobileNumber string required customer’s registered mobile number

@@ -1,10 +1,11 @@
 <?php
 /**
- * @package Jenga For WooCommerce
+ * @package Osen Jenga
  * @author Osen Concepts < hi@osen.co.ke >
  * @version 1.10
  */
-namespace Osen;
+
+namespace Jenga;
 
 /**
  * 

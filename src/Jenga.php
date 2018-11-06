@@ -1,23 +1,32 @@
 <?php
 /**
- * @package Jenga For WooCommerce
+ * @package Osen Jenga
  * @author Osen Concepts < hi@osen.co.ke >
  * @version 1.10
  */
-namespace Osen;
+namespace Jenga;
 /**
  * 
  */
 class Jenga
 {
-	public static $config;
+	public static $username;
+	public static $password;
+	public static $api_key;
+	public static $phone;
+
+	//public static $;
 	
-	function __construct( array $config = array() )
+	function configure( array $config = array() )
 	{
-		self::$config = $config;
+		self::$username = $config['username'] ?? '';
+		self::$password = $config['password'] ?? '';
 
+		self::$api_key = $config['api_key'] ?? '';
 
-		self::$x = $config['x'] ?? '';
+		self::$phone = $config['phone'] ?? '';
+		
+		//self::$x = $config['x'] ?? '';
 	}
 
     /**
@@ -27,7 +36,7 @@ class Jenga
 	 * expires_in | string | token expiry time in seconds
 	 * access_token | string | access token to access other APIs
      */
-	public static function auth()
+	public static function authenticate()
 	{
 		$endpoint = 'https://sandbox.jengahq.io/identity-test/v2/token';
 	    $curl = curl_init();
