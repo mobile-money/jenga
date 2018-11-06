@@ -1,5 +1,5 @@
 {
-    "name":"Osen Jenga",
+    "name":"osenco/jenga",
     "description":"Modular PHP Implementations of the Jenga APIs",
     "repositories":[
         {
