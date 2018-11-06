@@ -1,10 +1,10 @@
 <?php
 /**
- * @package Jenga For WooCommerce
+ * @package Osen Jenga
  * @author Osen Concepts < hi@osen.co.ke >
  * @version 1.10
  */
-namespace Osen;/**
+namespace Jenga;/**
  * 
  */
 class AccountServices extends Jenga
@@ -22,7 +22,7 @@ class AccountServices extends Jenga
 		$signature = base64_encode( hash( 'sha256', $country.$account ) );
 	    $curl = curl_init();
 	    curl_setopt( $curl, CURLOPT_URL, $endpoint );
-	    curl_setopt( $curl, CURLOPT_HTTPHEADER, array( 'Authorization: Bearer '. parent::auth(), 'signature: '.$signature ) );
+	    curl_setopt( $curl, CURLOPT_HTTPHEADER, array( 'Authorization: Bearer '. parent::authenticate(), 'signature: '.$signature ) );
 
 	    $curl_response = curl_exec($curl);
 	    return json_decode( $curl_response )
@@ -46,7 +46,7 @@ class AccountServices extends Jenga
 		$signature = base64_encode( hash( 'sha256', $country.$account ) );
 	    $curl = curl_init();
 	    curl_setopt( $curl, CURLOPT_URL, $endpoint );
-	    curl_setopt( $curl, CURLOPT_HTTPHEADER, array( 'Authorization: Bearer '. parent::auth(), 'signature: '.$signature ) );
+	    curl_setopt( $curl, CURLOPT_HTTPHEADER, array( 'Authorization: Bearer '. parent::authenticate(), 'signature: '.$signature ) );
 
 	    $curl_response = curl_exec($curl);
 	    return json_decode( $curl_response )
@@ -75,7 +75,7 @@ class AccountServices extends Jenga
 		$endpoint = "https://sandbox.jengahq.io/account-test/v2/accounts/fullstatement";
 	    $curl = curl_init();
 	    curl_setopt( $curl, CURLOPT_URL, $endpoint );
-	    curl_setopt( $curl, CURLOPT_HTTPHEADER, array( 'Authorization: Bearer '. parent::auth(), 'signature: '.$signature, 'Content-Type:application/json' ) );
+	    curl_setopt( $curl, CURLOPT_HTTPHEADER, array( 'Authorization: Bearer '. parent::authenticate(), 'signature: '.$signature, 'Content-Type:application/json' ) );
 
 	    $curl_post_data = array(
 	      'countryCode' => '',
@@ -115,7 +115,7 @@ class AccountServices extends Jenga
 		$signature = base64_encode( hash( 'sha256', $country.$account ) );
 	    $curl = curl_init();
 	    curl_setopt( $curl, CURLOPT_URL, $endpoint );
-	    curl_setopt( $curl, CURLOPT_HTTPHEADER, array( 'Authorization: Bearer '. parent::auth(), 'signature: '.$signature, 'Content-Type:application/json' ) );
+	    curl_setopt( $curl, CURLOPT_HTTPHEADER, array( 'Authorization: Bearer '. parent::authenticate(), 'signature: '.$signature, 'Content-Type:application/json' ) );
 
 	    $curl_post_data = array(
 	      'countryCode' => $country,
@@ -151,7 +151,7 @@ class AccountServices extends Jenga
 		$signature = base64_encode( hash( 'sha256', $country.$account ) );
 	    $curl = curl_init();
 	    curl_setopt( $curl, CURLOPT_URL, $endpoint );
-	    curl_setopt( $curl, CURLOPT_HTTPHEADER, array( 'Authorization: Bearer '. parent::auth(), 'signature: '.$signature, 'Content-Type:application/json' ) );
+	    curl_setopt( $curl, CURLOPT_HTTPHEADER, array( 'Authorization: Bearer '. parent::authenticate(), 'signature: '.$signature, 'Content-Type:application/json' ) );
 	    $curl_response = curl_exec($curl);
 	    return json_decode( $curl_response );
 	}
@@ -172,7 +172,7 @@ class AccountServices extends Jenga
 		$signature = base64_encode( hash( 'sha256', $country.$account ) );
 	    $curl = curl_init();
 	    curl_setopt( $curl, CURLOPT_URL, $endpoint );
-	    curl_setopt( $curl, CURLOPT_HTTPHEADER, array( 'Authorization: Bearer '. parent::auth(), 'signature: '.$signature, 'Content-Type:application/json' ) );
+	    curl_setopt( $curl, CURLOPT_HTTPHEADER, array( 'Authorization: Bearer '. parent::authenticate(), 'signature: '.$signature, 'Content-Type:application/json' ) );
 
 	    $curl_post_data = array(
 	      'countryCode' => $country,
