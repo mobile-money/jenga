@@ -1,20 +1,21 @@
 {
     "name":"osenco/jenga",
     "description":"Modular PHP Implementations of the Jenga APIs",
-    "repositories":[
+    "type":"library",
+    "authors": [
         {
-            "type":"package",
-            "package":{
-                "name":"osenco/jenga",
-                "version":"master",
-                "source":{
-                    "url":"git://github.com/osenco/jenga.git",
-                    "type":"git",
-                    "reference":"master"
-                }
-            }
+            "name": "Mauko Maunde",
+            "email": "mauko@osen.co.ke",
+            "homepage": "https://osen.co.ke",
+            "role": "Senior Developer"
         }
     ],
+    "autoload": {
+        "psr-4": {
+            "Jenga\\": "src/",
+        }
+    }
+    "license": "MIT",
     "config":{
         "vendor-dir":"vendor"
     }
