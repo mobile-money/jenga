@@ -2,7 +2,7 @@
 Modular PHP implementations of the Jenga APIs
 
 ## Installation
-Laravel users do a `composer install`
+Laravel users do a `composer require osenco/jenga`
 
 
 ## Usage
