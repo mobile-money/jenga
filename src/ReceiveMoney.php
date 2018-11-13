@@ -11,93 +11,90 @@ namespace Jenga;
  */
 class ReceiveMoney extends Jenga
 {
-
+	/**
+	 * @param $method string Payment method
+	 * @param $data string Payment request data
+	 * @return array
+	 */
 	public static function request( $method, $data )
 	{
-		return self::$$method( $data );
+		//return self::$$method( $data );
+		$class = new self;
+		return call_user_func_array( array( self, $$method ), $data );
 	}
 
-	
 	/**
 	 * @param customer object
 	 * @param customer.mobileNumber string required customer’s registered mobile number
-		customer.countryCode
-		string
-		required
-
-		country code
-		transaction
-		object
-
-		transaction.description
-		 
-		transaction.amount
-		string
-		required
-
-		amount to be transferred from customer to merchant
-		transaction.description
-		string
-		required
-
-		description for customer identification of particular transaction
-		transaction.type
-		string
-		required
-
-		type of the transaction being perfomed. For now, only EazzyPayOnline is supported.
-		transaction.reference
-		string
-		required
-
-		transaction reference
-
-		@return array 
-
-
-		referenceNumber
-
-		string
-
-		request ID. To be used later for the Get Payment Status API
-
-		status
-
-		string
-
-		message identifying the status of the eazzypush request
-
-
+	 * @param customer.countryCode string required
+	 * @param country code transaction object
+	 * @param transaction.description		 
+	 * @param transaction.amount string required amount to be transferred from customer to merchant
+	 * @param transaction.description string required description for customer identification of particular transaction
+	 * @param transaction.type string required type of the transaction being perfomed. For now, only EazzyPayOnline is supported.
+	 * @param transaction.reference string required transaction reference
+	 *
+	 * @return array 
+	 * referenceNumber string
+	 * request ID. To be used later for the Get Payment Status API
+	 * status string message identifying the status of the eazzypush request
 	 */
-	public static function eazzypay($value='')
+	public static function eazzypay( $data = array() )
 	{
-		$url = "https://sandbox.jengahq.io/transaction-test/v2/payments";
+		$amount 	= $data['amount'];
+		$phone 		= $data['phone'];
+		$reference 	= $data['ref'];
 
-
+		$url 		= "https://sandbox.jengahq.io/transaction-test/v2/payments";
 	}
 
-	public static function mpesa($value='')
+	/**
+	 * @param $data array 
+	 */
+	public static function mpesa( $data = array() )
 	{
-		# code...
+		$amount 	= $data['amount'];
+		$phone 		= $data['phone'];
+		$reference 	= $data['ref'];
 	}
 
-	public static function bill($value='')
+	/**
+	 * @param $data array 
+	 */
+	public static function bill( $data = array() )
 	{
-		# code...
+		$amount 	= $data['amount'];
+		$phone 		= $data['phone'];
+		$reference 	= $data['ref'];
 	}
 
-	public static function merchant($value='')
+	/**
+	 * @param $data array 
+	 */
+	public static function merchant( $data = array() )
 	{
-		# code...
+		$amount 	= $data['amount'];
+		$phone 		= $data['phone'];
+		$reference 	= $data['ref'];
 	}
 
-	public static function mastercard($value='')
+	/**
+	 * @param $data array 
+	 */
+	public static function mastercard( $data = array() )
 	{
-		# code...
+		$amount 	= $data['amount'];
+		$phone 		= $data['phone'];
+		$reference 	= $data['ref'];
 	}
 
-	public static function reverse($value='')
+	/**
+	 * @param $data array 
+	 */
+	public static function reverse( $data = array() )
 	{
-		# code...
+		$amount 	= $data['amount'];
+		$phone 		= $data['phone'];
+		$reference 	= $data['ref'];
 	}
 }

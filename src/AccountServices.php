@@ -4,7 +4,10 @@
  * @author Osen Concepts < hi@osen.co.ke >
  * @version 1.10
  */
-namespace Jenga;/**
+
+namespace Jenga;
+
+/**
  * 
  */
 class AccountServices extends Jenga
@@ -55,20 +58,20 @@ class AccountServices extends Jenga
 	/**
 	 * We currently support statements from Equity Bank (KE, SS, TZ, UG, DRC RW)
 	 * @return array
-	 accountNumber | string | account number
-	 currency | string | account currency
-	 balance | string | account balance
-	 transactions | array | transactions list
-	 transactions.reference | string | transaction reference
-	 transactions.date | string | transaction date
-	 transactions.description | string | transaction description
-	 transactions.amount | string | transaction amount will always be the same as the account currency
-	 transactions.serial | string | transaction serial number
-	 transactions.postedDateTime | string
-	 transactions.type | string | transaction type. One of; Debit Credit
-	 transactions.runningBalance | object | running balance amount
-	 runningBalance.currency | string | running balance currency
-	 runningBalance.currency | string | running balance amount
+	 * accountNumber | string | account number
+	 * currency | string | account currency
+	 * balance | string | account balance
+	 * transactions | array | transactions list
+	 * transactions.reference | string | transaction reference
+	 * transactions.date | string | transaction date
+	 * transactions.description | string | transaction description
+	 * transactions.amount | string | transaction amount will always be the same as the account currency
+	 * transactions.serial | string | transaction serial number
+	 * transactions.postedDateTime | string
+	 * transactions.type | string | transaction type. One of; Debit Credit
+	 * transactions.runningBalance | object | running balance amount
+	 * runningBalance.currency | string | running balance currency
+	 * runningBalance.currency | string | running balance amount
 	 */
 	public static function full_statement( $country = 'KE', $account )
 	{
